@@ -5,7 +5,7 @@ class Window:
     def __init__(self, widht, height, title="MyWindow", resizable=(False, False), icon=None):
         self.root = Tk()
         self.root.title(title)
-        self.root.geometry(f"{widht}x{height}+200+200")
+        # self.root.geometry(f"{widht}x{height}+200+200")
         self.root.resizable([0], resizable[1])
         if icon:
             self.root.iconbitmap(icon)
@@ -19,7 +19,14 @@ class Window:
 
 
     def draw_widget(self):
-        self.label.pack(anchor=NW, padx=180, pady=200)
+        f = Frame(self.root)
+        f.pack()
+        # self.label.pack(anchor=NW, padx=180, pady=200)
+        Label(f, width=30, height=2, bg="#db03fc", text="first").pack(side=TOP)
+        Label(f, width=30, height=2, bg="#c71e4e", text="second").pack(side=TOP)
+        Label(f, width=30, height=2, bg="#26a1bd", text="free").pack(side=BOTTOM)
+
+
 
     
     def create_child(self, widht, height, title="Child", resizable=(False, False), icon=None):
