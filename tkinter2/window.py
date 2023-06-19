@@ -19,12 +19,15 @@ class Window:
 
 
     def draw_widget(self):
-        f = Frame(self.root)
-        f.pack()
+        top_frame = LabelFrame(self.root, text="нажми на кнопку")
+        bottom_frame = LabelFrame(self.root, text="нажми на вторую кнопку")    
+        top_frame.pack(padx=20, pady=30)
+        bottom_frame.pack(ipadx=10, ipady=10)
         # self.label.pack(anchor=NW, padx=180, pady=200)
-        Label(f, width=30, height=2, bg="#db03fc", text="first").pack(side=TOP)
-        Label(f, width=30, height=2, bg="#c71e4e", text="second").pack(side=TOP)
-        Label(f, width=30, height=2, bg="#26a1bd", text="free").pack(side=BOTTOM)
+        Label(top_frame, width=30, height=2, bg="#db03fc", text="first").pack(side=LEFT, padx=5, pady=5)
+        Label(top_frame, width=30, height=2, bg="#c71e4e", text="second").pack(side=LEFT, padx=5, pady=5)
+        Label(bottom_frame, width=30, height=2, bg="#26a1bd", text="free").pack(side=LEFT, padx=5, pady=5)
+        Label(bottom_frame, width=30, height=2, bg="#d9c036", text="free").pack(side=LEFT, padx=5, pady=5)
 
 
 
